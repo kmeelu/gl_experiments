@@ -1,4 +1,4 @@
-gl_experiments
+GL experiments
 ==============
 
 Experiments in webGL using various javascript libraries (Three.js, Tween.js, Physi.js, &amp; tQuery)
