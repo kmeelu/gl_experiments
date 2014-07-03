@@ -1,0 +1,107 @@
+<!-- <html>
+	<head>
+		<title>My first Three.js app</title>
+		<style>canvas { width: 100%; height: 100% }</style>
+	</head>
+	<body>
+		<script src="js/three.min.js"></script>
+		
+		<script>
+			var scene = new THREE.Scene();
+			var camera = new THREE.PerspectiveCamera(75, window.innerWidth/window.innerHeight, 0.1, 1000);
+
+			var renderer = new THREE.WebGLRenderer();
+			renderer.setSize(window.innerWidth, window.innerHeight);
+			document.body.appendChild(renderer.domElement);
+
+			var geometry = new THREE.CubeGeometry(1,1,1);
+			var material = new THREE.MeshBasicMaterial({color: 0x00ff00});
+			var cube = new THREE.Mesh(geometry, material);
+			scene.add(cube);
+
+			camera.position.z = 5;
+
+			var render = function () {
+				requestAnimationFrame(render);
+
+				cube.rotation.x += 0.01;
+				cube.rotation.y += 0.01;
+
+				renderer.render(scene, camera);
+			};
+
+			render();
+		</script>
+	</body>
+</html> 
+
+-->
+<!DOCTYPE html>
+<html>
+<head>
+<title>A Three.js Demo</title>
+
+</head>
+
+
+<body>
+
+<div id="container" style="width:500px; height:500px; background-color:#000000"></div>
+
+
+<script src="js/three.min.js"></script>
+<!-- <script src="src/Three.js"></script> -->
+
+<script type="text/javascript">
+	var scene, renderer, camera;
+	var geometry, material, mesh;
+
+	var container = document.getElementById('container');
+
+	scene = new THREE.Scene();
+	camera = new THREE.PerspectiveCamera(75, container.offsetWidth/container.offsetHeight, 0.1, 1000);
+	scene.add(camera);
+
+	renderer = new THREE.WebGLRenderer();
+	renderer.setSize(container.offsetWidth, container.offsetHeight);
+	// document.body.appendChild(renderer.domElement);
+	container.appendChild(renderer.domElement);
+
+	geometry = new THREE.CubeGeometry(1,1,1);
+	material = new THREE.MeshBasicMaterial({color: 0x33FFCC});
+	cube = new THREE.Mesh(geometry, material);
+	scene.add(cube);
+
+	camera.position.z = 3;
+
+
+
+	var render = function () {
+		requestAnimationFrame(render);
+		cube.rotation.x += .04;
+		cube.rotation.y += .02;
+
+		renderer.render(scene, camera);
+
+	}
+
+	render();
+
+</script>
+
+
+</body>
+</html>
+
+
+
+
+
+<!-- file:///Users/kmeelu/cs/gl_portfolio/index.html -->
+
+
+
+
+
+
+
