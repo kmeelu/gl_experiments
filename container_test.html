@@ -50,13 +50,21 @@
 
 
 <script src="js/three.min.js"></script>
+<script src="src/materials/MeshBasicMaterial.js"></script>
+<script src="src/TrackballControls.js"></script>
+<script src="src/libs/stats.min.js"></script>
 <!-- <script src="src/Three.js"></script> -->
 
 <script type="text/javascript">
 	var scene, renderer, camera;
 	var geometry, material, mesh;
+	var controls;
 
-	var container = document.getElementById('container');
+	var container;
+
+
+
+	container = document.getElementById('container');
 
 	scene = new THREE.Scene();
 	camera = new THREE.PerspectiveCamera(75, container.offsetWidth/container.offsetHeight, 0.1, 1000);
@@ -67,19 +75,18 @@
 	// document.body.appendChild(renderer.domElement);
 	container.appendChild(renderer.domElement);
 
-	geometry = new THREE.CubeGeometry(1,1,1);
-	material = new THREE.MeshBasicMaterial({color: 0x33FFCC});
+	geometry = new THREE.SphereGeometry(1,10,10);
+	material = new THREE.MeshBasicMaterial({});
 	cube = new THREE.Mesh(geometry, material);
 	scene.add(cube);
 
 	camera.position.z = 3;
 
 
-
 	var render = function () {
 		requestAnimationFrame(render);
-		cube.rotation.x += .04;
 		cube.rotation.y += .02;
+		// cube.rotation.x += .002;
 
 		renderer.render(scene, camera);
 

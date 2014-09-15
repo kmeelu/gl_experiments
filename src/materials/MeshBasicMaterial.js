@@ -54,7 +54,7 @@ THREE.MeshBasicMaterial = function ( parameters ) {
 
 	this.shading = THREE.SmoothShading;
 
-	this.wireframe = false;
+	this.wireframe = true;
 	this.wireframeLinewidth = 1;
 	this.wireframeLinecap = 'round';
 	this.wireframeLinejoin = 'round';
